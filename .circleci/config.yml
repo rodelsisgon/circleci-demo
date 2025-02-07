@@ -8,7 +8,8 @@ jobs:
     steps:
       - checkout
       - run: pip install --upgrade --user pip
-      - run: pip install -r ~/circleci-python/requirements.txt  # Install dependencies
+      - run: pip install --upgrade --user pytest
+#      - run: pip install -r requirements.txt  # Install dependencies
       - run: python3 main.py  # Run main script
 
   test:
