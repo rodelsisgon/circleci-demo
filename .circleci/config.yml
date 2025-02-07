@@ -7,8 +7,9 @@ jobs:
       - image: "circleci/python:3.6.4"
   steps:
     - checkout
-    - run: python3 --version ## python3 main.py
-
+    - run:
+        command: python3 --version ## python3 main.py
+  
   test:
     working_directory: ~/circleci-python
     docker:
@@ -16,12 +17,12 @@ jobs:
     steps:
       - checkout
       - run:
-          command: python3 -m pip install --upgrade --user pip ## python3 main-test.py 
+          command: python3 --version ## python3 main-test.py 
 
 workflows:
   build_and_test:
-  jobs:
-    - build
-    - test:
-        requires:
-          - build
+    jobs:
+      - build
+      - test:
+          requires:
+            - build
