@@ -8,8 +8,7 @@ jobs:
     steps:
       - checkout
       - run: pip install --upgrade --user pip
-      - run: pip install --upgrade --user pytest
-#      - run: pip install -r requirements.txt  # Install dependencies
+      - run: pip install --upgrade --user pytest 
       - run: python3 main.py  # Run main script
 
   test:
@@ -18,9 +17,9 @@ jobs:
       - image: "circleci/python:3.6.4"
     steps:
       - checkout
-#      - run: pip install --upgrade pip
-#      - run: pip install -r requirements.txt  # Install dependencies
-      - run: pytest test_main.py  # Run test script
+      - run: pip install --upgrade --user pip
+      - run: pip install --upgrade --user pytest
+      - run: python3 -m pytest test_main.py  # Run test script
 
 workflows:
   build_and_test:
