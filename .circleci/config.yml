@@ -7,7 +7,7 @@ jobs:
       - image: "circleci/python:3.6.4"
     steps:
       - checkout
-      - run: python3 --version
+      - run: pip3 install --upgrade pip3
       - run: pip install -r requirements.txt  # Install dependencies
       - run: python3 main.py  # Run main script
 
@@ -17,8 +17,8 @@ jobs:
       - image: "circleci/python:3.6.4"
     steps:
       - checkout
-      - run: python3 --version
-      - run: pip install -r requirements.txt  # Install dependencies
+      - run: pip3 install --upgrade pip3
+      - run: pip3 install -r requirements.txt  # Install dependencies
       - run: python3 test_main.py  # Run test script
 
 workflows:
