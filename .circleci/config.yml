@@ -16,9 +16,8 @@ jobs:
     steps:
       - checkout
       - run:
-          - run:
-            command: python3 -m pip install --upgrade --user pip
-            command: which python3  ## python3 main-test.py
+          command: python3 -m pip install --upgrade --user pip
+          command: which python3  ## python3 main-test.py
 
 workflows:
   build_and_test:
